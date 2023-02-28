@@ -3,6 +3,7 @@ import {
   Image,
   useWindowDimensions
 } from 'react-native';
+import FastImage from "react-native-fast-image";
 
 interface RemoteImageProps {
   readonly uri: string;
@@ -29,7 +30,7 @@ const RemoteImage = (props: RemoteImageProps) => {
   })
 
   return (
-    <Image
+    <FastImage
       source={{uri: props.uri}}
       style={{
         borderWidth: 2,

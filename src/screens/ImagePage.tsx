@@ -18,7 +18,7 @@ interface Props {
 }
 
 interface ImageMetadata {
-  readonly thumbUrl: string;
+  readonly imgUrl: string;
 }
 
 const ImagePage: React.FC<Props> = props => {
@@ -36,7 +36,7 @@ const ImagePage: React.FC<Props> = props => {
         if (json.results) {
           json.results.map((item: any, index: number) => {
             results.push({
-              thumbUrl: item.urls.thumb
+              imgUrl: item.urls.small
             })
           });
         } else {
@@ -66,7 +66,7 @@ const ImagePage: React.FC<Props> = props => {
           data={imageData}
           renderItem={({item, index}) =>
             <RemoteImage
-              uri={item.thumbUrl}
+              uri={item.imgUrl}
             />
           }
           numColumns={imageData.length}
